@@ -1,0 +1,32 @@
+<project name="blurred-lines" default="build">
+	<property name="src" value="src" />
+	<property name="build" value="build" />
+	<property name="build.classes" value="${build}/classes" />
+	<property name="build.jar" value="${build}/jar" />
+	<property name="build.jar.file" value="${build.jar}/${ant.project.name}.jar" />
+	<property name="main.class" value="com.rds.blurred.lines.Main" />
+	
+	<target name="clean">
+		<delete dir="${build}" />
+	</target>
+
+	<target name="classes">
+		<mkdir dir="${build.classes}" />
+		<javac srcdir="${src}" destdir="${build.classes}" includeantruntime="false" />
+	</target>
+
+	<target name="jar" depends="classes">
+		<mkdir dir="${build.jar}" />
+		<jar basedir="${build.classes}" destfile="${build.jar.file}">
+			<manifest>
+				<attribute name="Main-Class" value="${main.class}" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="build" depends="jar" />
+
+	<target name="run" depends="build">
+		<java jar="${build.jar.file}" fork="true" />
+	</target>
+</project>
