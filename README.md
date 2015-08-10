@@ -6,6 +6,4 @@ Author: Richard Dodson
 Created: Mon Aug 10 00:06:29 UTC 2015
 ```
 
-```json
-{ "some": "json" }
-```
+Please follow this [hyperlink](https://api.github.com/repos/rdodson41/blurred-lines) to access additional project information.
