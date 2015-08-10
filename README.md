@@ -11,4 +11,4 @@ Created: Mon Aug 10 00:06:29 UTC 2015
 
 ## License
 
-[GNU General Public License, Version 2, June 1991](https://github.com/rdodson41/blurred-lines/blob/master/LICENSE)
+[GNU General Public License, Version 2 (June 1991)](https://github.com/rdodson41/blurred-lines/blob/master/LICENSE)
