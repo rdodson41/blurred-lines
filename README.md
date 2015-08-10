@@ -9,7 +9,6 @@ Author: Richard Dodson
 Created: Mon Aug 10 00:06:29 UTC 2015
 ```
 
-## Additional Information
+## License
 
-The following hyperlink will direct you to additional project information in the form of a JSON object:
-- [rdodson41/blurred-lines](https://api.github.com/repos/rdodson41/blurred-lines)
+[GNU General Public License, Version 2, June 1991](https://github.com/rdodson41/blurred-lines/blob/master/LICENSE)
