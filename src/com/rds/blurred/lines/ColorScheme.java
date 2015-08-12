@@ -1,10 +1,11 @@
-/*
- * ColorScheme.java
- * Created by Richard Dodson on Jul 7, 2013 at 5:36:57 PM.
- *
- */
+//
+// com.rds.blurred.lines
+// ColorScheme.java
+// Author: Richard Dodson
+// Created: Sun Jul  7 2013 at 21:36:57 UTC 2013
+//
 
-package com.rds.Fractals;
+package com.rds.blurred.lines;
 
 import java.awt.Color;
 

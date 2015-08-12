@@ -4,7 +4,7 @@
 	<property name="build.classes" value="${build}/classes" />
 	<property name="build.jar" value="${build}/jar" />
 	<property name="build.jar.file" value="${build.jar}/${ant.project.name}.jar" />
-	<property name="main.class" value="com.rds.blurred.lines.Main" />
+	<property name="main.class" value="com.rds.blurred.lines.Frame" />
 	
 	<target name="clean">
 		<delete dir="${build}" />

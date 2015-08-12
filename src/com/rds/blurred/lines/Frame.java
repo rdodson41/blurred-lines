@@ -1,11 +1,11 @@
-/*
- * Frame.java
- * Created by Richard Dodson on Jul 7, 2013 at 5:46:49 PM.
- *
- */
+//
+// com.rds.blurred.lines
+// Frame.java
+// Author: Richard Dodson
+// Created: Sun Jul  7 2013 at 21:46:49 UTC 2013
+//
 
-package com.rds.Fractals;
-
+package com.rds.blurred.lines;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -32,7 +32,6 @@ public class Frame extends JFrame {
 		setResizable(false);
 
 		panel = new JPanel() {
-			@Override
 			public void paintComponent(Graphics graphics) {
 				fractal.paint(graphics, affine_transform, color_scheme);
 			}

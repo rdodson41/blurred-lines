@@ -1,9 +1,11 @@
-/*
- * Fractal.java
- * Created by Richard Dodson on Jul 7, 2013 at 5:29:52 PM.
- *
- */
-package com.rds.Fractals;
+//
+// com.rds.blurred.lines
+// Fractal.java
+// Author: Richard Dodson
+// Created: Sun Jul  7 2013 at 21:29:52 UTC 2013
+//
+
+package com.rds.blurred.lines;
 
 import java.awt.Graphics;
 import java.awt.geom.AffineTransform;

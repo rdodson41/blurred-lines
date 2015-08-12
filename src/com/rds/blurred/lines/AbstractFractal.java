@@ -1,10 +1,11 @@
-/*
- * AbstractFractal.java
- * Created by Richard Dodson on Jul 7, 2013 at 5:36:15 PM.
- *
- */
+//
+// com.rds.blurred.lines
+// AbstractFractal.java
+// Author: Richard Dodson
+// Created: Sun Jul  7 2013 at 21:36:15 UTC 2013
+//
 
-package com.rds.Fractals;
+package com.rds.blurred.lines;
 
 import java.awt.Color;
 import java.awt.Graphics;

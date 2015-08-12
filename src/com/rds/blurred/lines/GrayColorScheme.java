@@ -1,12 +1,13 @@
-/*
- * GrayColorScheme.java
- * Created by Richard Dodson on Jul 7, 2013 at 6:21:28 PM.
- *
- */
+//
+// com.rds.blurred.lines
+// GrayColorScheme.java
+// Author: Richard Dodson
+// Created: Sun Jul  7 2013 at 22:21:28 UTC 2013
+//
 
-package com.rds.Fractals;
+package com.rds.blurred.lines;
 
-import com.rds.g2d.Color;
+import java.awt.Color;
 
 public class GrayColorScheme extends AbstractColorScheme {
 	public GrayColorScheme() {
@@ -14,6 +15,6 @@ public class GrayColorScheme extends AbstractColorScheme {
 
 	@Override
 	public Color getColor(double depth) {
-		return new Color(depth, depth, depth);
+		return new Color((float)depth, (float)depth, (float)depth);
 	}
 }

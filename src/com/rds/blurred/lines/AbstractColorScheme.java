@@ -1,15 +1,15 @@
-/*
- * AbstractColorScheme.java
- * Created by Richard Dodson on Jul 7, 2013 at 5:38:13 PM.
- *
- */
+//
+// com.rds.blurred.lines
+// AbstractColorScheme.java
+// Author: Richard Dodson
+// Created: Sun Jul  7 2013 at 21:38:13 UTC 2013
+//
 
-package com.rds.Fractals;
+package com.rds.blurred.lines;
 
 import java.awt.Color;
 
 public abstract class AbstractColorScheme implements ColorScheme{
-	@Override
 	public Color getColor(double iteration, int max_iterations) {
 		return getColor(iteration / max_iterations);
 	}
