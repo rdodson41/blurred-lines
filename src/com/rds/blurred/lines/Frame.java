@@ -7,6 +7,8 @@
 
 package com.rds.blurred.lines;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 
@@ -20,23 +22,25 @@ public class Frame extends JFrame {
         
         WindowAdapter window_adapter = this.createWindowAdapter();
         this.addWindowListener(window_adapter);
+        
+        Panel panel = this.createPanel();
+        this.setContentPane(panel);
+    }
+    
+    protected Panel createPanel() {
+        return new Panel();
     }
     
     protected WindowAdapter createWindowAdapter() {
         return new WindowAdapter();
     }
     
+    protected class Panel extends javax.swing.JPanel {
+    }
+    
     protected class WindowAdapter extends java.awt.event.WindowAdapter {
-        public void windowOpened(WindowEvent window_event) {
-            System.out.println("windowOpened");
-        }
-        
         public void windowClosing(WindowEvent window_event) {
-            System.out.println("windowClosing");
-        }
-        
-        public void windowClosed(WindowEvent window_event) {
-            System.out.println("windowClosed");
+            application.quit();
         }
     }
     
