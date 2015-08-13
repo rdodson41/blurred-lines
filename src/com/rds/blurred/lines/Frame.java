@@ -2,96 +2,47 @@
 // com.rds.blurred.lines
 // Frame.java
 // Author: Richard Dodson
-// Created: Sun Jul  7 2013 at 21:46:49 UTC 2013
+// Created: Thu Aug 13 02:13:02 UTC 2015
 //
 
 package com.rds.blurred.lines;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseWheelEvent;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Point2D;
+import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class Frame extends JFrame {
-	protected Fractal fractal = new Mandelbrot();
-	protected AffineTransform affine_transform = new AffineTransform();
-	protected ColorScheme color_scheme = ColorScheme.GRAY;
-
-	protected JPanel panel;
-
-	public Frame() {
-		super("Fractals 0.1");
-
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
-
-		panel = new JPanel() {
-			public void paintComponent(Graphics graphics) {
-				fractal.paint(graphics, affine_transform, color_scheme);
-			}
-		};
-		setContentPane(panel);
-		Dimension preferred_size = new Dimension(640, 480);
-		panel.setPreferredSize(preferred_size);
-		MouseAdapter mouse_adapter = new MouseHandler();
-		panel.addMouseListener(mouse_adapter);
-		panel.addMouseWheelListener(mouse_adapter);
-
-		pack();
-
-		Point2D point = new Point2D.Double(0, 0);
-		center(point);
-	}
-
-
-	public void center(Point2D point) {
-		double translate_x = point.getX() - 320;
-		double translate_y = point.getY() - 240;
-		affine_transform.translate(translate_x, translate_y);
-		panel.repaint();
-	}
-
-	public void zoomIn() {
-		affine_transform.translate(160, 120);
-		affine_transform.scale(0.5, 0.5);
-		panel.repaint();
-	}
-
-	public void zoomOut() {
-		affine_transform.scale(2, 2);
-		affine_transform.translate(-160, -120);
-		panel.repaint();
-	}
-
-	public void zoom(double ratio) {
-
-	}
-
-	public static void main(String[] arguments) {
-		Frame frame = new Frame();
-		frame.setVisible(true);
-	}
-
-	protected class MouseHandler extends MouseAdapter {
-		public MouseHandler() {
-		}
-
-		@Override
-		public void mouseClicked(MouseEvent mouse_event) {
-			Point point = mouse_event.getPoint();
-			center(point);
-		}
-
-		@Override
-		public void mouseWheelMoved(MouseWheelEvent mouse_wheel_event) {
-			double rotation = mouse_wheel_event.getPreciseWheelRotation();
-			System.out.println(rotation);
-		}
-	}
+    protected Application application;
+    
+    public Frame(Application application) {
+        super();
+        
+        this.application = application;
+        
+        WindowAdapter window_adapter = this.createWindowAdapter();
+        this.addWindowListener(window_adapter);
+    }
+    
+    protected WindowAdapter createWindowAdapter() {
+        return new WindowAdapter();
+    }
+    
+    protected class WindowAdapter extends java.awt.event.WindowAdapter {
+        public void windowOpened(WindowEvent window_event) {
+            System.out.println("windowOpened");
+        }
+        
+        public void windowClosing(WindowEvent window_event) {
+            System.out.println("windowClosing");
+        }
+        
+        public void windowClosed(WindowEvent window_event) {
+            System.out.println("windowClosed");
+        }
+    }
+    
+    public static void main(String[] arguments) {
+        Application application = new Application();
+        Frame frame = new Frame(application);
+        frame.setVisible(true);
+    }
 }
