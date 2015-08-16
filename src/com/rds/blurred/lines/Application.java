@@ -7,9 +7,17 @@
 
 package com.rds.blurred.lines;
 
+import java.awt.Graphics;
+
 public class Application {
+    protected Fractal fractal;
+    
     public Application() {
         
+    }
+    
+    public void render(Graphics graphics) {
+        fractal.render(graphics);
     }
     
     public void quit() {

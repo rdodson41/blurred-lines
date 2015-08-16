@@ -7,7 +7,6 @@
 
 package com.rds.blurred.lines;
 
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
@@ -20,11 +19,11 @@ public class Frame extends JFrame {
         
         this.application = application;
         
-        WindowAdapter window_adapter = this.createWindowAdapter();
-        this.addWindowListener(window_adapter);
+        Panel panel = createPanel();
+        setContentPane(panel);
         
-        Panel panel = this.createPanel();
-        this.setContentPane(panel);
+        WindowAdapter window_adapter = createWindowAdapter();
+        addWindowListener(window_adapter);
     }
     
     protected Panel createPanel() {
@@ -36,6 +35,9 @@ public class Frame extends JFrame {
     }
     
     protected class Panel extends javax.swing.JPanel {
+        public void paintComponent(Graphics graphics) {
+            application.render(graphics);
+        }
     }
     
     protected class WindowAdapter extends java.awt.event.WindowAdapter {
