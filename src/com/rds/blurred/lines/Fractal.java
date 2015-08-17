@@ -7,6 +7,6 @@
 
 package com.rds.blurred.lines;
 
-public interface Fractal extends Renderable {
-    
+public interface Fractal {
+	
 }
