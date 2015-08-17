@@ -16,6 +16,10 @@ public class Application {
 		
 	}
 	
+	public void render(Graphics graphics) {
+		
+	}
+	
 	public void quit() {
 		System.exit(0);
 	}
