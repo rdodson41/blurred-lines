@@ -7,6 +7,8 @@
 
 package com.rds.blurred.lines;
 
+import java.awt.geom.AffineTransform;
+
 public interface Fractal {
-	
+	public int[] generate(int width, int height, AffineTransform affine_transform, int maximum_iterations, int[] data);
 }
